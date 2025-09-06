@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyShop - Online Store</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+    body{
+      background:linear-gradient(135deg,#f0f4f8,#dfe9f3);
+      color:#333;
+    }
+    header{
+      background:linear-gradient(90deg,#ff5e00,#ff8c42);
+      color:#fff;
+      padding:15px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow:0 4px 8px rgba(0,0,0,0.2);
+    }
+    header h1{
+      font-size:26px;
+      animation: fadeIn 2s ease;
+      font-weight: bold;
+    }
+    nav a{
+      color:white;
+      margin:0 15px;
+      text-decoration:none;
+      font-weight:bold;
+      transition:0.3s;
+    }
+    nav a:hover{
+      color:yellow;
+    }
+
+    .search-box{
+      margin:20px auto;
+      text-align:center;
+    }
+    .search-box input{
+      width:60%;
+      padding:12px 20px;
+      border-radius:30px;
+      border:2px solid #ff5e00;
+      outline:none;
+      font-size:16px;
+    }
+
+    .products{
+      display:grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+      padding:40px;
+    }
+    .product{
+      background:#fff;
+      border-radius:15px;
+      box-shadow:0 6px 12px rgba(0,0,0,0.15);
+      padding:20px;
+      text-align:center;
+      transition:transform 0.3s, box-shadow 0.3s;
+      cursor:pointer;
+    }
+    .product:hover{
+      transform: translateY(-10px) scale(1.05);
+      box-shadow:0 10px 20px rgba(0,0,0,0.25);
+    }
+    .product img{
+      max-width:100%;
+      border-radius:10px;
+      height:180px;
+      object-fit:cover;
+    }
+    .product h3{
+      margin:15px 0;
+      font-size:18px;
+    }
+    .product button{
+      background:linear-gradient(90deg,#ff5e00,#e64a19);
+      color:white;
+      border:none;
+      padding:10px 25px;
+      border-radius:25px;
+      cursor:pointer;
+      transition:0.3s;
+      font-weight:bold;
+    }
+    .product button:hover{
+      background:linear-gradient(90deg,#ff7e33,#d84315);
+    }
+
+    footer{
+      background:#222;
+      color:white;
+      text-align:center;
+      padding:20px;
+      margin-top:40px;
+    }
+
+    @keyframes fadeIn{
+      from{opacity:0; transform:translateY(-20px);}
+      to{opacity:1; transform:translateY(0);}
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>MyShop</h1>
+    <nav>
+      <a href="index.html">হোম</a>
+      <a href="products.html">প্রোডাক্ট</a>
+      <a href="order.html">অর্ডার</a>
+      <a href="settings.html">সেটিংস</a>
+    </nav>
+  </header>
+
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="প্রোডাক্ট খুঁজুন..." onkeyup="searchProduct()">
+  </div>
+
+  <section class="products" id="productList">
+    <div class="product" data-name="জুতা স্মার্ট shoes" onclick="openPage('product1.html')">
+      <img src="https://images.unsplash.com/photo-1606813909355-1e4d021b8c6d?auto=format&fit=crop&w=500&q=60" alt="Shoes">
+      <h3>স্মার্ট জুতা</h3>
+      <p>৳ 1500</p>
+      <button>অর্ডার করুন</button>
+    </div>
+    <div class="product" data-name="হেডফোন headphone" onclick="openPage('product2.html')">
+      <img src="https://images.unsplash.com/photo-1512499617640-c2f999018b72?auto=format&fit=crop&w=500&q=

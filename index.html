@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fashion Store</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background: #fff;
+      color: #333;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 100;
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .nav a {
+      margin: 0 0.5rem;
+      text-decoration: none;
+      color: #555;
+    }
+    .search input {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      text-align: left;
+    }
+    .hero img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+    .hero-text {
+      position: absolute;
+      bottom: 40px;
+      left: 40px;
+      color: white;
+      max-width: 500px;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+    .btn {
+      background: black;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      margin-top: 1rem;
+      margin-right: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid white;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    /* Products */
+    .products {
+      padding: 2rem;
+      text-align: center;
+    }
+    .products h2 {
+      margin-bottom: 1.5rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      border: 1px solid #eee;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+    .card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+    .card h3 {
+      margin: 0.5rem;
+    }
+    .card p {
+      margin: 0.5rem;
+      font-weight: bold;
+    }
+    .card:hover {
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    /* Promo */
+    .promo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      padding: 2rem;
+      align-items: center;
+    }
+    .promo-text {
+      max-width: 400px;
+    }
+    .promo img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    /* Newsletter */
+    .newsletter {
+      padding: 2rem;
+      text-align: center;
+      background: #f9f9f9;
+    }
+    .newsletter form {
+      margin-top: 1rem;
+    }
+    .newsletter input {
+      padding: 0.7rem;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .small {
+      margin-top: 0.5rem;
+      font-size: 12px;
+      color: #777;
+    }
+
+    /* Footer */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-top: 1px solid #eee;
+      font-size: 14px;
+    }
+    .footer nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: #555;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .promo {
+        grid-template-columns: 1fr;
+      }
+      .hero-text {
+        left: 20px;
+        right: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">off.store</div>
+    <nav class="nav">
+      <a href="#">Categories</a>
+      <a href="#">New Product</a>
+      <a href="#">Offers</a>
+    </nav>
+    <div class="search">
+      <input type="text" placeholder="Search…">
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?q=80&w=1400&auto=format&fit=crop" alt="Hero">
+    <div class="hero-text">
+      <h1>We are digital meets fashions</h1>
+      <p>Show your store pride, get high-quality swag directly from the store foundation.</p>
+      <button class="btn">Start Shopping</button>
+      <button class="btn-outline">Top Collections</button>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="products">
+    <h2>Fresh arrivals and new selections</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=800" alt="">
+        <h3>Ribbed Crew Sweater</h3>
+        <p>$59</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1520975922284-5f5730ce0b19?q=80&w=800" alt="">
+        <h3>Overshirt Jacket</h3>
+        <p>$89</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1516826957135-700dedea698c?q=80&w=800" alt="">
+        <h3>Minimal Cotton Tee</h3>
+        <p>$25</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Promo Section -->
+  <section class="promo">
+    <div class="promo-text">
+      <h2>Exclusive fashion offers await</h2>
+      <p>Limited-time discounts on curated looks.</p>
+      <button class="btn">Try Now</button>
+      <button class="btn-outline" style="color:#333;border:1px solid #333;">Learn More</button>
+    </div>
+    <img src="https://images.unsplash.com/photo-1520975593026-7253ab6ee0ea?q=80&w=1200" alt="Promo">
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <h2>Stay in touch</h2>
+    <p>Get updates on new drops and exclusive deals.</p>
+    <form id="subscribeForm">
+      <input type="email" id="email" placeholder="you@example.com" required>
+      <button type="submit" class="btn">Subscribe</button>
+    </form>
+    <p class="small">By subscribing you agree to our Terms & Privacy.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 off.store — All rights reserved.</p>
+    <nav>
+      <a href="#">About</a>
+      <a href="#">FAQs</a>
+      <a href="#">Contact</a>
+    </nav>
+  </footer>
+
+  <script>
+    document.getElementById("subscribeForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      let email = document.getElementById("email").value;
+      if(email) {
+        alert("Thank you for subscribing, " + email + "!");
+        document.getElementById("subscribeForm").reset();
+      }
+    });
+  </script>
+</body>
+</html>
